@@ -1,0 +1,20 @@
+Prereq expression parser: deterministic parser that converts human prereq text into boolean expressions and evaluates against completed_courses set. Provide unit tests for nested AND/OR/— ensure transitive equivalence.
+
+Constraint Solver:Representation: binary selection variables for course sections.
+
+Constraints: time conflicts, prereqs, credit limits, required-bucket coverage, seat capacity (soft/hard depending).
+
+Solver: ILP with objective = weighted sum (-progress toward graduation, +student preference score, -predicted risk, +workload balance penalty).
+
+Fallback: greedy heuristic planner for quick responses.
+
+Explanation generator:Map solver decisions to human tokens: e.g., "Selected CS300-02 because it satisfies Major Requirement X and fits your time preference Tuesday/Thursday 10–11:50."
+Consent & enrollment workflow:Dry-run records + student-visible summary.
+Consent string matching exact phrase (for auditability).
+Webhook for ENROLLMENT_API and rollback within window.
+
+Advisor packet generator:
+PDF/summary with sanitized PII, timestamp, links to secure portal for full details.
+
+Monitoring:
+Track success/failure of enroll flows and escalate system errors to on-call.
