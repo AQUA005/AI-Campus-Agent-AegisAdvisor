@@ -1,4 +1,4 @@
-4. Data & Privacy Requirements (must-have)
+1. Data & Privacy Requirements (must-have)
 FERPA-compliant: only authorized staff and the student can access educational records. Default: student data is private; external staff needs explicit authorization.
 Consent model with scopes: READ_PROFILE, READ_TRANSCRIPT, WRITE_ENROLLMENT, SCHEDULE_MEETINGS.
 Data retention policy and deletion request handling.
@@ -7,7 +7,7 @@ Logging: immutable audit trail with student ID, action, timestamp, agent rationa
 Minimization: only fetch fields required for a session, avoid persisting raw grades unless consented.
 Differential privacy or aggregation for analytics when using historical outcomes.
 
-5. Safety & Ethics: mandatory behaviors
+2. Safety & Ethics: mandatory behaviors
 Never change a student’s major, advisor, or official record without human approvals and a two-step confirmation.
 High-risk or ambiguous scenarios (academic probation, academic integrity flags, administrative holds) → must route to a human advisor with suggested actions and a concise pack.
 Provide clear opt-out and “talk to human” buttons prominently.
@@ -15,13 +15,13 @@ Explainability: every recommendation must come with the top-3 reasoning points (
 Bias checks: test for systemic bias by demographic groups; expose mitigations.
 Rate-limit automated enrollments and require explicit student consent per term.
 
-6. Typical interaction flows (examples)
+3. Typical interaction flows (examples)
 Student: “I want to graduate in 4 terms. Plan my next term.”
 Agent: perceives transcript, requirements → reasons: constructs candidate course sets using constraint solver → acts: shows 3 schedules (fastest, balanced, lowest-workload) with trade-offs → student chooses one → agent offers to submit enrollment (if permitted).
 Advisor: receives “Advising packet” for student with suggested exceptions (prereq waiver) + reasoning and simulation. Advisor approves or modifies.
 High-risk flag: Student on probation tries to overload. Agent blocks auto-enroll and schedules an advisor meeting, sends resources for academic support.
 
-7. Evaluation & Metrics
+4. Evaluation & Metrics
 Accuracy: % of requirements correctly detected; correct course prerequisites handling — target >99% for canonical cases.
 Satisfaction: student & advisor satisfaction surveys (NPS).
 Time savings: avg. advisor time saved per case.
@@ -31,13 +31,13 @@ Safety violations: zero unauthorized changes; detection via automated audits.
 Fairness: statistical parity metrics across demographic slices.
 Testing: unit tests for catalog parsing; integration tests with SIS sandbox; red-team policy violation tests; A/B trials with human oversight.
 
-8. Failure Modes & Mitigations
+5. Failure Modes & Mitigations
 Failure: wrong degree requirement mapping → Mitigation: cross-check mapping with Registrar canonical source; generate “confidence score” and require advisor sign-off below threshold.
 Failure: enrollment API mistake → Mitigation: two-phase commit, dry-run + explicit user consent and undo capability.
 Failure: data staleness → Mitigation: show last-updated timestamps; automatic re-fetch on sensitive actions.
 Adversarial input: test harness and input sanitization.
 
-9. Deployment & Ops
+6. Deployment & Ops
 Deploy as microservices with containerized components (K8s).
 Canary deploy on limited student cohort.
 Observability: metrics (Prometheus), logs (ELK), SLOs with alerting.
