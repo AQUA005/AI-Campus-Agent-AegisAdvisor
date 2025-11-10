@@ -1,0 +1,5 @@
+High impact: directly affects retention, time-to-degree, and student wellbeing.
+
+Needs perception (student records, calendar, course data), reasoning (degree mapping, prerequisite planning, trade-off analysis), and action (schedule proposals, registration API calls, calendar invites, advisor notifications).
+
+Requires strong privacy, auditability, and human-in-the-loop governance — perfect to demonstrate safe, agentic AI design.
