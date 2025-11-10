@@ -1,0 +1,37 @@
+a. Perception Layer
+
+1. Connectors / adapters:
+2. SIS (Student Information System) Connector (e.g., Banner, PeopleSoft, Workday Student) — read-only unless explicit action allowed.
+3. LMS Connector (Canvas/Blackboard) for course metadata & grades.
+4. Catalog API / Registrar feed.
+5. Calendar & Email connectors.
+6. Predictive analytics service (optional).
+7. Data validation & canonicalizer (normalizes course codes, terms, section ids).
+
+b. Knowledge & Memory
+1. Short-term memory: session-level context + working plan.
+2. Persistent memory (consented): preferences, declared constraints, advisor notes (encrypted).
+3. Knowledge graph: students ↔ courses ↔ degree requirements ↔ policies (queryable).
+
+c. Reasoning Layer
+1. Rule Engine (formalized policy + degree requirements).
+2. Planner/Constraint Solver (SMT/ILP or custom heuristic solver).
+3. Ranking model (multi-objective scoring).
+4. Explanation generator (maps solver steps to human-readable rationales).
+
+d. Action Layer
+1. Output renderers: UI cards, email templates, calendar invites.
+2. Integration drivers: Enrollment API client, Meeting scheduler, Notification service.
+3. Human-in-the-loop escalation workflow.
+
+e. Governance & Safety
+1. Consent manager (records scope of access and action).
+2. Audit & Logging service (immutable logs).
+3. Policy enforcer: prevents unauthorized actions and enforces hard constraints.
+4. Privacy & encryption at-rest/in-transit; role-based access control.
+5. Red-team testing harness & simulated adversarial inputs.
+
+f. Interface
+1. Student-facing UI (web/mobile/chat).
+2. Advisor dashboard (approve/override recommendations; see audit trail).
+3. Admin dashboard (metrics, errors, compliance).
