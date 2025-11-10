@@ -1,0 +1,28 @@
+a.Perceive
+1. Ingest student profile: major(s), minor(s), declared concentrations, transfer credits, GPA, completed courses (grades, terms), holds, enrollment status, academic standing.
+2. Ingest course catalog & schedule: course descriptions, prerequisites/corequisites, sections, times, instructors, capacity, waitlist, cross-listing, modality (in-person/remote/hybrid).
+3. Ingest degree requirements & program rules: degree maps, elective buckets, residency requirements, max credits per term, special program rules.
+4. Ingest institution policies: add/drop deadlines, withdrawal rules, required approvals, probation rules, FERPA & consent metadata.
+5. Ingest student signals & calendar: current schedule, time blocks, work hours (student-provided), accessibility accommodations.
+6. Ingest advisor & departmental data: advisor schedules, office hours, advising holds, internal notes (GPDR/FERPA controlled).
+7. Ingest historical outcomes (optional, for recommendations): course grade distributions, predictive models for success by prior student features.
+8. Real-time events: registration open/close, seat changes, waitlist updates.
+9. Secure audit logs & consent records about what the agent may see/do.
+
+b.Reason
+1. Map student state to degree constraints (requirements satisfaction, in-progress, remaining).
+2. Prerequisite reasoning with temporal constraints (student may waive prereq under conditions).
+3. Multi-objective optimization: minimize time-to-degree, balance workload, respect schedule preferences, maximize GPA expectancy, satisfy electives diversity.
+4. Counterfactual simulation: “If you take courses A,B this term and C next, expected time-to-degree = X; predicted GPA trend = Y.”
+5. Explainable decision traces: chain of supportable reasoning steps (not opaque chain-of-thought).
+6. Risk/flag reasoning: identify hold/financial risk/academic probation risks and decide to escalate.
+7. Policy constraint checking: check actions against policies and escalate when not allowed.
+
+c.Act
+1. Present human-readable plans and multiple alternatives with trade-offs.
+2. Create full schedule (section assignments) and simulate conflicts/resolution suggestions.
+3. Suggest courses and generate registration cart / auto-enroll (if user consents & institution allows) via Enrollment API.
+4. Book advisor meetings (calendar invites) and prepare a compact advising packet for the human advisor.
+5. Send notifications (in-app, email, SMS) with consent and opt-out toggles.
+6. Create and maintain an audit trail of recommendations, student consent, and actions.
+7. Escalate to human advisor for any high-stakes intervention (holds, probation, unclear degree exceptions).
