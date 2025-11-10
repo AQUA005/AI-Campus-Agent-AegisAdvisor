@@ -1,5 +1,4 @@
 a. Perception Layer
-
 1. Connectors / adapters:
 2. SIS (Student Information System) Connector (e.g., Banner, PeopleSoft, Workday Student) — read-only unless explicit action allowed.
 3. LMS Connector (Canvas/Blackboard) for course metadata & grades.
